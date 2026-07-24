@@ -45,6 +45,11 @@ CHANNEL_SECRET = ENV["LINE_CHANNEL_SECRET"]
 set :bind, "0.0.0.0"
 # 待ち受けるポート番号です。4567 は sinatra の初期値です。
 set :port, 4567
+# どの住所(ホスト名)からのアクセスも許可する、という設定です。
+# sinatra は安全のため、初期状態だと localhost 以外を
+# 「Host not permitted」と拒否します。Codespaces の公開URL
+# （...app.github.dev）で受け取れるように、この制限を外します。
+set :host_authorization, { permitted_hosts: [] }
 
 # ---- 動作確認用のページ ----
 
