@@ -64,7 +64,7 @@ step2・step3 のサーバーが動いていたら、先に `Ctrl + C` で止め
 （同じ `4567` 番ポートを使うためです）。
 
 ```bash
-cd step4
+cd complete/step4
 ruby app.rb
 ```
 

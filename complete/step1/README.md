@@ -17,7 +17,7 @@ LINE の友だち**全員に、一方的にメッセージを送るだけ**の�
 3. このフォルダに移動して実行します。
 
 ```bash
-cd step1
+cd complete/step1
 ruby send_message.rb
 ```
 

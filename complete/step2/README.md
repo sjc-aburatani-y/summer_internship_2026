@@ -24,7 +24,7 @@ Codespaces のポート公開機能を使って、その URL を用意します�
 ルートで `bundle install` 済みであることを確認し、このフォルダで起動します。
 
 ```bash
-cd step2
+cd complete/step2
 ruby app.rb
 ```
 
