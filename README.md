@@ -1,9 +1,11 @@
-# LINE Bot 学習プロジェクト（step1 → step2）
+# LINE Bot 学習プロジェクト（step1 → step4）
 
-LINE Bot を2つのステップで少しずつ学ぶための教材プロジェクトです。
+LINE Bot を4つのステップで少しずつ学ぶための教材プロジェクトです。
 
 - **step1: 送信のみ** … LINE の友だち全員へ一方的に送る
-- **step2: 送受信** … 届いたメッセージを受け取って返信する
+- **step2: 送受信** … 届いたメッセージを受け取って返信する（オウム返し）
+- **step3: おみくじ** … 届いた言葉によって返事を変える
+- **step4: タイプ判別** … step3 に加えて、文字・画像・スタンプなど届いた種類を判別する
 
 技術スタック:
 
@@ -19,9 +21,19 @@ LINE Bot を2つのステップで少しずつ学ぶための教材プロジェ�
 | --- | --- | --- |
 | step1 | 送信のみ（全員へ一斉送信） | [step1/](step1/) |
 | step2 | 送受信（受信して返信） | [step2/](step2/) |
+| step3 | おみくじ（届いた言葉で返事を変える） | [step3/](step3/) |
+| step4 | メッセージのタイプ判別（step3 ＋ 画像・スタンプ対応） | [step4/](step4/) |
 
 まず step1 から進めるのがおすすめです。各フォルダの `README.md` に
 そのステップの詳しい手順を書いています。
+
+> 📘 **API ドキュメント**（Webhook の中身・メッセージタイプ一覧・
+> 返信 API・署名検証・エラー一覧）は
+> [step4/README.md の「API ドキュメント」](step4/README.md#api-ドキュメント)
+> にまとめています。
+
+> step2 以降はどれも `4567` 番ポートでサーバーを起動します。
+> 別のステップを試すときは、前のサーバーを `Ctrl + C` で止めてください。
 
 ---
 
@@ -45,8 +57,8 @@ LINE Bot を2つのステップで少しずつ学ぶための教材プロジェ�
 
 | 名前 | 使うステップ |
 | --- | --- |
-| `LINE_CHANNEL_ACCESS_TOKEN` | step1・step2 |
-| `LINE_CHANNEL_SECRET` | step2 |
+| `LINE_CHANNEL_ACCESS_TOKEN` | step1・step2・step3・step4 |
+| `LINE_CHANNEL_SECRET` | step2・step3・step4 |
 
 #### 手元のパソコンで動かす場合
 
@@ -82,7 +94,13 @@ bundle install
 ├── step1/                 … 【step1】送信のみ
 │   ├── send_message.rb
 │   └── README.md
-└── step2/                 … 【step2】送受信
+├── step2/                 … 【step2】送受信（オウム返し）
+│   ├── app.rb
+│   └── README.md
+├── step3/                 … 【step3】おみくじ
+│   ├── app.rb
+│   └── README.md
+└── step4/                 … 【step4】タイプ判別 ＋ API ドキュメント
     ├── app.rb
     └── README.md
 ```
