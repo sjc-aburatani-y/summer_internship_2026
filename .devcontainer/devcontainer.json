@@ -18,6 +18,14 @@
   // ここで bundle install を実行し、Gemfile に書いた gem を入れます。
   "postCreateCommand": "bundle install",
 
+  // コンテナ内で使う環境変数です。
+  // Ruby LSP 拡張が内部で使う rdoc と、Ruby 本体に同梱された rdoc の
+  // バージョンが異なるため出る「already initialized constant」警告を
+  // 抑制します（動作に影響のない無害な警告です）。
+  "containerEnv": {
+    "RUBYOPT": "-W0"
+  },
+
   // VS Code（Codespaces のエディタ）に関する追加設定です。
   "customizations": {
     "vscode": {

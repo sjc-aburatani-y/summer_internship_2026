@@ -25,6 +25,7 @@
 # 実行方法（ターミナルで）:
 #   cd draft/step2
 #   ruby app.rb
+#   （すでに別の step のフォルダにいる場合は、先に cd ../../ でルートに戻ってください）
 #   → その後、Codespaces で公開されたURLを LINE の Webhook に登録します
 #     （くわしくは draft/step2/README.md を参照）
 #
@@ -44,8 +45,10 @@ require "json"
 # 確認する「署名チェック」に使う道具です。
 require "openssl"
 require "base64"
-# dotenv/load は、.env ファイルを読み込んで ENV に入れてくれます。
-require "dotenv/load"
+# dotenv は、.env ファイルを読み込んで ENV に入れてくれます。
+# リポジトリルートの .env を直接指定して読み込みます。
+require "dotenv"
+Dotenv.load(File.expand_path("../../.env", __dir__))
 
 # ---- 秘密の設定を環境変数から取り出します ----
 # ここも完成済みです。

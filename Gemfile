@@ -25,3 +25,6 @@ gem "sinatra"
 
 # puma は sinatra を実際に動かすためのサーバー本体です。
 gem "puma"
+
+# rackup は Sinatra 3.0 以降でサーバーを起動するために必要な gem です。
+gem "rackup"

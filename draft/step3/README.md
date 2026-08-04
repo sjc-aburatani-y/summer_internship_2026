@@ -109,6 +109,8 @@ cd draft/step3
 ruby app.rb
 ```
 
+> すでに別の step のフォルダにいる場合は、先に `cd ../../` でルートに戻ってください。
+
 ### 2. ポートを公開して URL を得る（Codespaces）
 
 1. Codespaces 下部の **「ポート(PORTS)」タブ** を開きます。

@@ -15,6 +15,7 @@
 # 実行方法（ターミナルで）:
 #   cd draft/step1
 #   ruby send_message.rb
+#   （すでに別の step のフォルダにいる場合は、先に cd ../../ でルートに戻ってください）
 #
 # 答えを見たいときは ../../complete/step1/send_message.rb を開いてください。
 #
@@ -34,8 +35,10 @@ require "net/http"
 require "uri"
 # json は、データを LINE が理解できる形（JSON）に変換する道具です。
 require "json"
-# dotenv/load は、.env ファイルを読み込んで ENV に入れてくれます。
-require "dotenv/load"
+# dotenv は、.env ファイルを読み込んで ENV に入れてくれます。
+# リポジトリルートの .env を直接指定して読み込みます。
+require "dotenv"
+Dotenv.load(File.expand_path("../../.env", __dir__))
 
 # ---- 秘密の設定を環境変数から取り出します ----
 # ここも完成済みです。
